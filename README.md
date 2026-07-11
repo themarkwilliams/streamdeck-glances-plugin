@@ -55,6 +55,12 @@ device, and a ready-made 15-key profile is included.
    Profile** key), or add **Container** keys to rows and pick each key's
    column — each key detects its list row automatically from its position on
    the deck (topmost plugin row = first container).
+   - **One container, every metric**: keys on the same physical deck row already
+     share a container automatically. For any other layout — say a block of
+     Name/CPU/MEM/Uptime keys all dedicated to the list's top container — set
+     each key's **List row** to **Manual** with the *same* row number, then give
+     each key a different column. All of them track whichever container occupies
+     that list position (combine with sorting: row 1 = highest CPU).
 1. Open any key's settings → **Glances connection** → add your host(s): label,
    host/IP, port, protocol, and credentials if your server uses them — then press
    **Test** to verify.
