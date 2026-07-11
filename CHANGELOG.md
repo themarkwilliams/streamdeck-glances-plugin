@@ -5,6 +5,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follo
 
 ## [Unreleased]
 
+## [0.1.18] - 2026-07-11
+### Changed
+- Host Metrics settings now use a Metric dropdown like the Container key's column picker: the primary six metrics grouped on top, the extra pages below, and a "Cycle multiple" choice that reveals the checkbox list and interval for rotating keys. Picking a single metric pins the key to it.
+
 ## [0.1.17] - 2026-07-11
 ### Added
 - Five new Host Metrics pages (enable via checkboxes; off by default): Host uptime, Process count (total with running/sleeping), Top process (name with CPU/MEM, colored by CPU), IP address (LAN, plus public when the server reports it), and Fan speed (fastest fan sensor, RPM).
