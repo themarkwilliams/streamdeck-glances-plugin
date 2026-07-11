@@ -1,0 +1,68 @@
+name: Bug report
+description: Something in Docker Monitor is not working as expected
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Before submitting, please
+        check the existing issues to avoid duplicates.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the problem, and what you expected instead.
+      placeholder: Pressing the container name key opens the wrong page...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Add a Container Name key
+        2. Configure host ...
+        3. Press the key
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Docker Monitor plugin version
+      description: Shown in the Stream Deck app under the plugin's entry.
+      placeholder: 0.1.15
+    validations:
+      required: true
+  - type: input
+    id: streamdeck-version
+    attributes:
+      label: Stream Deck software version
+      placeholder: "7.0"
+    validations:
+      required: true
+  - type: input
+    id: glances-version
+    attributes:
+      label: Glances version and how it runs
+      description: For example "4.5.5, nicolargo/glances Docker image" or "4.3, pip install".
+      placeholder: 4.5.5, Docker image
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system (running the Stream Deck app)
+      options:
+        - Windows
+        - macOS
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: |
+        Optional but very helpful. Logs are in the plugin folder under logs/
+        (Windows: %APPDATA%\Elgato\StreamDeck\Plugins\com.marktastic.streamdeck-glances.sdPlugin\logs).
+      render: text
