@@ -27,7 +27,9 @@ action; each key's column setting picks its face:
 - **Scroll** — page through all containers manually (▲/▼ keys or a Stream Deck+
   dial, wrapping at the ends) or automatically on a configurable interval.
 - **Host Metrics** — one key cycling overall CPU, memory, swap, load average,
-  network, disk I/O, disk usage, temperature, and GPU — or pin one metric per key.
+  network, disk I/O, disk usage, temperature, and GPU — or pin one metric per
+  key. Optional extra pages: host uptime, process count, top process (the
+  hungriest process on the host), IP address, and fan speed.
 - **Switch Host** — monitor any number of Glances servers; 
     - Press the Switch Host button to cycle.
     - Switch Host button shows a color indicator of host status.

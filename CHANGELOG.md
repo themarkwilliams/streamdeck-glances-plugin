@@ -5,6 +5,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follo
 
 ## [Unreleased]
 
+## [0.1.17] - 2026-07-11
+### Added
+- Five new Host Metrics pages (enable via checkboxes; off by default): Host uptime, Process count (total with running/sleeping), Top process (name with CPU/MEM, colored by CPU), IP address (LAN, plus public when the server reports it), and Fan speed (fastest fan sensor, RPM).
+
 ## [0.1.16] - 2026-07-11
 ### Changed
 - One Container action replaces the four per-container action types: its column setting picks the face (Name by default; CPU, Memory, Uptime, Status, Disk I/O, Network or Image). The URL section in its settings appears when the column is Name. The old Container CPU/Memory/Uptime action types are removed (pre-release, nothing shipped), and the bundled 15-key profile is regenerated to use the single action with per-key columns.
