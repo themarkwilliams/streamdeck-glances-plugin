@@ -5,6 +5,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follo
 
 ## [Unreleased]
 
+## [0.1.21] - 2026-07-19
+### Changed
+- All action icons are now white on black (Container, Host Metrics, Switch Host, Open Profile, Scroll); only the plugin's marketplace logo keeps the brand green.
+- READMEs refreshed: Host Metrics feature list includes all fourteen metric pages and the dropdown picker; em-dashes removed everywhere per house style.
+
 ## [0.1.20] - 2026-07-19
 ### Added
 - All metric columns now sort on press: Status (worst first: stopped, unhealthy, transitioning, healthy), Disk I/O (combined read+write rate), Network (combined rx+tx rate), and Image (alphabetical) join CPU, Memory and Uptime. Press again to flip; the sort indicator shows on whichever column is active.

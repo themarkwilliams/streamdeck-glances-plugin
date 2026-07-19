@@ -8,17 +8,19 @@ Watch your Docker container performance on your Elgato Stream Deck, powered by t
 
 ## Features
 
-Host
-Buttons
+### Host Buttons
 
-- **Host Metrics** - one key cycling overall CPU, memory, swap, load average, network, disk I/O, disk usage, temperature, and GPU - or pin one metric per key.
+- **Host Metrics** - one key showing a host metric, picked from a dropdown, or
+  cycling through several: CPU, memory, swap, load average, network, disk I/O,
+  disk usage, temperature, GPU, host uptime, process count, top process, IP
+  address, and fan speed.
 - **Switch Host** - monitor any number of Glances servers; 
     - Press the Switch Host button to cycle.
     - Switch Host button shows a color indicator of host status.
     - Auto switch between hosts on a configurable interval (idle hosts are left
       twice as fast).
 
-Container Buttons
+### Container Buttons
 
 Each container gets a row of live-updating keys - all the same **Container** action; each key's column setting picks its face:
 
@@ -33,7 +35,7 @@ Each container gets a row of live-updating keys - all the same **Container** act
         - Set URL = none to turn off the linking action.
     - (Glances reports only *running* containers by default. To also list stopped
       containers (shown red), set `all=true` under `[containers]` in glances.conf.)
-- **Container Metric - pick per key; metric values are colored by Glances' own thresholds
+- **Container Metric** - pick per key; metric values are colored by Glances' own thresholds
   (green OK, blue ≥50%, purple ≥70%, red ≥90%).
     - **CPU**
     - **Memory**
@@ -46,8 +48,6 @@ Each container gets a row of live-updating keys - all the same **Container** act
 - Default sort: highest CPU first.
 - **Scroll** - page through all containers manually (▲/▼ keys or a Stream Deck+
   dial, wrapping at the ends) or automatically on a configurable interval.
-- 
-    - 
 - **Alerts Only** - optionally hide healthy, quiet containers and show just the
   ones over your CPU/MEM thresholds, or failing their health check.
 
@@ -61,7 +61,6 @@ device, and a ready-made 15-key profile is included.
   Glances is a general system monitor; container stats are one of its plugins, and
   the `[containers]` pip extra installs the Docker/Podman libraries that plugin
   needs: `pip install "glances[containers]"`, then `glances -w` (default port
-
   61208) - or run the `nicolargo/glances` Docker image, which includes it.
     - Optional authentication via `glances -w --username`.
 
