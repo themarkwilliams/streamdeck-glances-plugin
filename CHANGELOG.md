@@ -21,3 +21,5 @@ First consolidated release, summarizing the 0.1.x development line.
 
 ### Changed
 - Release process: dev (patch) versions are tracked in the private changelog; the public changelog and GitHub Releases carry minor/major versions only.
+- Plugin identifier is com.marktastic.streamdeck-docker-monitor (renamed from the working-title glances identifier before first publication).
+- Requires Stream Deck 6.9 or later; upgraded to the v2 Stream Deck SDK runtime (manifest SDKVersion 3), which makes the plugin DRM-eligible on the Elgato Marketplace.

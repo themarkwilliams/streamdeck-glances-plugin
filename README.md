@@ -64,7 +64,7 @@ Works on any Stream Deck - actions are individual keys you arrange to fit your d
 
 ## Requirements
 
-- Stream Deck software 6.5 or later (Windows 10+ / macOS 12+).
+- Stream Deck software 6.9 or later (Windows 10+ / macOS 12+).
 - A [Glances](https://nicolargo.github.io/glances/) server with container support.
 
     - Optional authentication via `glances -w --username`.
