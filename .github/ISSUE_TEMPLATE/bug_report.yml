@@ -64,5 +64,5 @@ body:
       label: Relevant log output
       description: |
         Optional but very helpful. Logs are in the plugin folder under logs/
-        (Windows: %APPDATA%\Elgato\StreamDeck\Plugins\com.marktastic.streamdeck-glances.sdPlugin\logs).
+        (Windows: %APPDATA%\Elgato\StreamDeck\Plugins\com.marktastic.streamdeck-docker-monitor.sdPlugin\logs).
       render: text
