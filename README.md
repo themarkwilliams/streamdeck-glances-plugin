@@ -40,8 +40,9 @@ Each container gets a row of live-updating keys - all the same **Container Metri
         - Green - running/healthy
         - Orange - paused/restarting/starting
         - Dark Orange - running, but failing its health check (unhealthy)
-        - Red - stopped (shown only if Glances is configured to list stopped
-          containers; see note below)
+        - Red - stopped. Glances reports only running containers by default;
+          to list stopped ones, set `all=true` under `[containers]` in the
+          server's glances.conf.
         - Press to open the container's web UI 
             - Published port is detected automatically
             - Link available indicated by an arrow on the button
