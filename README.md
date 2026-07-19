@@ -8,35 +8,43 @@ Watch your Docker container performance on your Elgato Stream Deck, powered by t
 
 ## Features
 
-### Host Buttons
+### Host
 
-- **Host Metrics** - one key showing a host metric, picked from a dropdown, or
-  cycling through several: CPU, memory, swap, load average, network, disk I/O,
-  disk usage, temperature, GPU, host uptime, process count, top process, IP
-  address, and fan speed.
+- **Host Metrics** - one key showing a host metric. Either select a specfic metric from a dropdown or cyle through several. Available metrics: 
+    - CPU
+    - memory
+    - swap
+    - load average
+    - network
+    - disk I/O
+    - disk usage
+    - temperature
+    - GPU
+    - host uptime
+    - process count
+    - top process
+    - IP address
+    - fan speed
 - **Switch Host** - monitor any number of Glances servers; 
-    - Press the Switch Host button to cycle.
+    - Any button shows the host configuration options. Enter ip/url, port and protocol. 
+    - Press the Switch Host button to cycle between configured hosts.
     - Switch Host button shows a color indicator of host status.
-    - Auto switch between hosts on a configurable interval (idle hosts are left
-      twice as fast).
+    - Auto switch between hosts on a configurable interval (default: 20 seconds, idle hosts are switch away 50% faster).
 
-### Container Buttons
+### Container 
 
-Each container gets a row of live-updating keys - all the same **Container** action; each key's column setting picks its face:
+Each container gets a row of live-updating keys - all the same **Container Metric** action; each key's column setting picks its face:
 
-- **Container Name** - on a background colored by container status 
-    - Green -  running/healthy
-    - Orange - paused/restarting/starting
-    - Dark orange - unhealthy. 
-    - Press to open the container's web UI 
-        - Published port is detected automatically
-        - Link indicated by an arrow on the button
-        - Override to use a custom URL template / per-container override. 
-        - Set URL = none to turn off the linking action.
-    - (Glances reports only *running* containers by default. To also list stopped
-      containers (shown red), set `all=true` under `[containers]` in glances.conf.)
-- **Container Metric** - pick per key; metric values are colored by Glances' own thresholds
-  (green OK, blue ≥50%, purple ≥70%, red ≥90%).
+- **Container Metric** - pick per key; metric values are colored by Glances' own thresholds (green OK, blue ≥50%, purple ≥70%, red ≥90%).
+    - **Container Name** - displays on a background indicating container status 
+        - Green -  running/healthy
+        - Orange - paused/restarting/starting
+        - Dark Orange - unhealthy. 
+        - Press to open the container's web UI 
+            - Published port is detected automatically
+            - Link available indicated by an arrow on the button
+            - Override to use a custom URL template / per-container override. 
+            - Set URL = none to turn off the linking action where port exists, but doesn't render a useful UI.
     - **CPU**
     - **Memory**
     - **Uptime**
@@ -44,29 +52,26 @@ Each container gets a row of live-updating keys - all the same **Container** act
     - **Disk I/O**
     - **Network**
     - **Image**
-- Press any metric key (CPU, Memory, Uptime, Status, Disk I/O, Network, Image) to sort the list by it; press again to flip the direction. 
-- Default sort: highest CPU first.
-- **Scroll** - page through all containers manually (▲/▼ keys or a Stream Deck+
-  dial, wrapping at the ends) or automatically on a configurable interval.
+- **Sort
+  List** - Press a metric key to sort the list by it; press again to flip the direction.  (Default sort: highest CPU first.)
+- **Scroll List **- page through all containers manually (▲/▼ keys or a Stream Deck+ dial, wrapping at the ends) or automatically on a configurable interval.
+    - Containers rotate every 4 seconds by default. If you manually scroll the list, it will resume auto scrolling after 8 seconds.
 - **Alerts Only** - optionally hide healthy, quiet containers and show just the
   ones over your CPU/MEM thresholds, or failing their health check.
+- **Container Metrics** by default will show the same container per row. If you want to adjust that, you can override the List Row assignment from Auto to a different row selection. 
 
-Works on any Stream Deck - actions are individual keys you arrange to fit your
-device, and a ready-made 15-key profile is included.
+Works on any Stream Deck - actions are individual keys you arrange to fit your device, and a ready-made 15-key profile is included.
 
 ## Requirements
 
 - Stream Deck software 6.5 or later (Windows 10+ / macOS 12+).
 - A [Glances](https://nicolargo.github.io/glances/) server with container support.
-  Glances is a general system monitor; container stats are one of its plugins, and
-  the `[containers]` pip extra installs the Docker/Podman libraries that plugin
-  needs: `pip install "glances[containers]"`, then `glances -w` (default port
-  61208) - or run the `nicolargo/glances` Docker image, which includes it.
+
     - Optional authentication via `glances -w --username`.
 
 ## Setup
 
-1. Install the bundled 15-key profile (offered on install, or press the **Open
+1. Install the bundled 15-key profile (offered on install, or press the **Install/Open
    Profile** key), or add **Container** keys to rows and pick each key's
    column - each key detects its list row automatically from its position on
    the deck (topmost plugin row = first container).
