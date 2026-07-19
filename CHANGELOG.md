@@ -5,6 +5,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follo
 
 ## [Unreleased]
 
+## [0.1.22] - 2026-07-19
+### Changed
+- Action-list icons redrawn as bare glyphs that fill the canvas (no background tile), so they render at the same visual size as other plugins' icons in the Stream Deck actions list.
+- Action renames: "Container" is now "Container Metrics", "Scroll List" is "Scroll Container List", and "Open Profile" is "Install/Open Profile".
+
 ## [0.1.21] - 2026-07-19
 ### Changed
 - All action icons are now white on black (Container, Host Metrics, Switch Host, Open Profile, Scroll); only the plugin's marketplace logo keeps the brand green.
