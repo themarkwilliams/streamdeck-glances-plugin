@@ -5,6 +5,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follo
 
 ## [Unreleased]
 
+## [0.1.19] - 2026-07-19
+### Added
+- A per-container URL override of `none` (or `-`) disables the link for that container entirely: no browser launch, no Glances-UI fallback, and the link badge is hidden. For containers whose published ports serve nothing openable, such as a reverse proxy.
+
 ## [0.1.18] - 2026-07-11
 ### Changed
 - Host Metrics settings now use a Metric dropdown like the Container key's column picker: the primary six metrics grouped on top, the extra pages below, and a "Cycle multiple" choice that reveals the checkbox list and interval for rotating keys. Picking a single metric pins the key to it.

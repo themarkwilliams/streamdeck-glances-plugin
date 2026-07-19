@@ -1,6 +1,6 @@
 # Docker Monitor for Stream Deck
 
-Watch your Docker containers on your Elgato Stream Deck, powered by the
+Watch your Docker container performance on your Elgato Stream Deck, powered by the
 [Glances](https://github.com/nicolargo/glances) monitoring server.
 
 > **This is the public home for the plugin: releases history, documentation, and
@@ -27,9 +27,7 @@ action; each key's column setting picks its face:
 - **Scroll** — page through all containers manually (▲/▼ keys or a Stream Deck+
   dial, wrapping at the ends) or automatically on a configurable interval.
 - **Host Metrics** — one key cycling overall CPU, memory, swap, load average,
-  network, disk I/O, disk usage, temperature, and GPU — or pin one metric per
-  key. Optional extra pages: host uptime, process count, top process (the
-  hungriest process on the host), IP address, and fan speed.
+  network, disk I/O, disk usage, temperature, and GPU — or pin one metric per key.
 - **Switch Host** — monitor any number of Glances servers; 
     - Press the Switch Host button to cycle.
     - Switch Host button shows a color indicator of host status.
@@ -48,6 +46,7 @@ device, and a ready-made 15-key profile is included.
   Glances is a general system monitor; container stats are one of its plugins, and
   the `[containers]` pip extra installs the Docker/Podman libraries that plugin
   needs: `pip install "glances[containers]"`, then `glances -w` (default port
+
   61208) — or run the `nicolargo/glances` Docker image, which includes it.
     - Optional authentication via `glances -w --username`.
 
@@ -57,6 +56,7 @@ device, and a ready-made 15-key profile is included.
    Profile** key), or add **Container** keys to rows and pick each key's
    column — each key detects its list row automatically from its position on
    the deck (topmost plugin row = first container).
+
    - **One container, every metric**: keys on the same physical deck row already
      share a container automatically. For any other layout — say a block of
      Name/CPU/MEM/Uptime keys all dedicated to the list's top container — set
@@ -68,7 +68,9 @@ device, and a ready-made 15-key profile is included.
    **Test** to verify.
 1. Optionally set a URL template (e.g. `https://{name}.lan`) or per-container URL
    overrides on a Name key; with nothing configured, pressing a name opens the
-   container's first published port.
+   container's first published port. Set an override to `none` to disable the
+   link for a container whose ports serve nothing openable (e.g. a reverse
+   proxy); its link badge disappears and pressing does nothing.
 1. Add **Scroll**, **Host Metrics**, and **Switch Host** keys as you like.
 
 ## Getting the plugin
