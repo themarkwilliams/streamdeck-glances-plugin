@@ -37,9 +37,11 @@ Each container gets a row of live-updating keys - all the same **Container Metri
 
 - **Container Metric** - pick per key; metric values are colored by Glances' own thresholds (green OK, blue ≥50%, purple ≥70%, red ≥90%).
     - **Container Name** - displays on a background indicating container status 
-        - Green -  running/healthy
+        - Green - running/healthy
         - Orange - paused/restarting/starting
-        - Dark Orange - unhealthy. 
+        - Dark Orange - running, but failing its health check (unhealthy)
+        - Red - stopped (shown only if Glances is configured to list stopped
+          containers; see note below)
         - Press to open the container's web UI 
             - Published port is detected automatically
             - Link available indicated by an arrow on the button
